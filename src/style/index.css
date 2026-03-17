@@ -1,0 +1,43 @@
+@import url(./components/person-card/person-card.css);
+@import url(./components/people-filter/people-filter.css);
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.main {
+    inline-size: var(--main-inline-size);
+    margin: 50px 0;
+    font-family: "Blogger Sans", sans-serif;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: var(--content-grid-columns-template);
+    gap: 85px;
+    inline-size: 100%;
+    block-size: 100%;
+}
+
+.people {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    inline-size: 100%;
+}
+
+@media screen and (width <= 768px) {
+    .content {
+        grid-template-columns: 1fr;
+        grid-template-rows: max-content 1fr;
+    }
+
+    .people-filter {
+        grid-row: 1;
+    }
+
+    .people {
+        grid-row: 2;
+    }
+}

@@ -1,0 +1,21 @@
+:root {
+    --grey: #edeff6;
+    --yellow: #ffd74B;
+    --orange: #ff8d30;
+    --white: #fff;
+    --blue-light: #1d2e5b;
+
+    --body-bg-color: var(--grey);
+    --like-bg: #e2e5f2;
+    --like-bg-enabled: #f9eaea;
+    --like-icon-enabled: #f02323;
+
+    --main-inline-size: 1321px;
+    --content-grid-columns-template: 950px 286px;
+}
+
+@media screen and (width <= 768px) {
+    :root {
+        --main-inline-size: 688px;
+    }
+}

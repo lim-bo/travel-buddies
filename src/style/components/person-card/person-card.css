@@ -1,0 +1,185 @@
+.person-card {
+    display: grid;
+    grid-template-columns: 285px 2fr 1fr min-content;
+    grid-template-rows: 1fr minmax(107px, min-content);
+    grid-template-areas: 
+        "image bio countries countries"
+        "image form transport level";
+    padding-inline-end: 44px;
+    border-radius: 20px;
+    background-color: var(--white);
+}
+
+.person-card__image {
+    grid-area: image;
+    object-fit: cover;
+    object-position: center;
+}
+
+.person-card__bio {
+    grid-area: bio;
+    align-self: center;
+    block-size: 100%;
+    padding: 37px 55px 45px 60px;
+}
+
+.person-card__name {
+    font-size: 30px;
+    line-height: 30px;
+    font-weight: 700;
+    color: var(--blue-light);
+    padding-inline-start: 12px;
+    margin-block-end: 23px;
+}
+
+.person-card__hashtags {
+    font-size: 20px;
+    line-height: 23px;
+}
+
+.person-card__countries {
+    grid-area: countries;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-self: flex-start;
+    padding-block-start: 41px;
+    text-transform: uppercase;
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 500;
+    color: var(--blue-light);
+}
+
+.person-card__countries-item {
+    display: flex;
+    gap: 20px;
+}
+
+.person-card__country-img {
+    inline-size: 35px;
+    block-size: 24px;
+}
+
+.person-card__form {
+    grid-area: form;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding-inline-start: 52px;
+    align-self: flex-start;
+    inline-size: 100%;
+}
+
+.person-card__invite-btn {
+    inline-size: 150px;
+    block-size: 50px;
+    border: none;
+    border-radius: 25px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 20px;
+    text-transform: uppercase;
+    background-color: var(--yellow);
+}
+
+.person-card__like-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    block-size: 50px;
+    inline-size: 50px;
+    background-color: var(--like-bg);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.person-card__like-label:has(:checked) {
+    background-color: var(--like-bg-enabled);
+}
+
+.person-card__like-icon {
+    stroke: #192144;
+    fill: transparent;
+    transition: 300ms;
+}
+
+.person-card__like-btn:checked + .person-card__like-icon {
+    stroke: var(--like-icon-enabled);
+    fill: var(--like-icon-enabled);
+}
+
+.person-card__likes {
+    margin-inline-start: 7px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 20px;
+    text-transform: uppercase;
+}
+
+.person-card__transport {
+    grid-area: transport;
+    display: flex;
+    align-items: center;
+    align-self: flex-start;
+    padding: 14px 0 11px;
+    gap: 14px;
+}
+
+.person-card__transport-item {
+    opacity: 0.15;
+}
+
+.person-card__transport-item.icon-enabled {
+    opacity: 1;
+}
+
+.person-card__level {
+    --level: 0;
+    
+    grid-area: level;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    inline-size: 60px;
+    block-size: 60px;
+    border-radius: 50%;
+    background: conic-gradient(
+        var(--orange) 0% calc(var(--level) * 1%),
+        #fff calc(var(--level) * 1%) 100%
+    );
+}
+
+.person-card__level::after {
+    content: '';
+    position: absolute;
+    width: calc(100% - (3px * 2));
+    height: calc(100% - (3px * 2));
+    background: white;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.person-card__level-value {
+    position: relative;
+    z-index: 1;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 24px;
+    color: var(--blue-light);
+}
+
+.person-card__level-label {
+    position: relative;
+    z-index: 1;
+    inline-size: 34px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 14px;
+    border-block-start: 1px solid #000;
+    opacity: 0.4;
+}

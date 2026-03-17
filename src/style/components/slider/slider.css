@@ -1,0 +1,45 @@
+.slider {
+    --range-track-top: 5px;
+    --range-progress-left: min(calc(var(--value-1) * 1%), calc(var(--value-2) * 1%));
+    --range-progress-w: calc((var(--value-2) - var(--value-1)) * 1%);
+    inline-size: 190px;
+    position: relative;
+}
+
+.thumbs {
+    display: grid;
+    inline-size: 100%;
+}
+
+.slider-input {
+    appearance: none;
+    background: none;
+    grid-area: 1 / 1;
+    accent-color: var(--blue-light);
+    pointer-events: none;
+}
+
+.slider-input::-webkit-slider-thumb {
+    pointer-events: auto;
+    margin-top: -1px;
+}
+
+.track {
+    position: absolute;
+    top: var(--range-track-top);
+    inline-size: 100%;
+    block-size: 3px;
+    border-radius: 2px;
+    background: var(--blue-light);
+    opacity: 0.2;
+}
+
+.progress {
+    position: absolute;
+    top: var(--range-track-top);
+    left: var(--range-progress-left);
+    width: var(--range-progress-w);
+    height: 3px;
+    border-radius: 2px;
+    background: var(--blue-light);
+}

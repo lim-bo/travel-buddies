@@ -1,0 +1,20 @@
+@font-face {
+    font-family: "Blogger Sans";
+    src: url(./Blogger_Sans.otf) format("opentype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Blogger Sans";
+    src: url(./Blogger_Sans-Bold.otf) format("opentype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Blogger Sans";
+    src: url(./Blogger_Sans-Medium.otf) format("opentype");
+    font-weight: 500;
+    font-style: normal;
+}

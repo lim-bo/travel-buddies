@@ -5,6 +5,8 @@
     grid-template-areas: 
         "image bio countries countries"
         "image form transport level";
+    block-size: 285px;
+    inline-size: 100%;
     padding-inline-end: 44px;
     border-radius: 20px;
     background-color: var(--white);
@@ -182,4 +184,79 @@
     line-height: 14px;
     border-block-start: 1px solid #000;
     opacity: 0.4;
+}
+
+@media screen and (width <= 768px) {
+    .person-card {
+        grid-template-rows: 1fr 88px 76px;
+        grid-template-columns: 254px 1fr min-content;
+        grid-template-areas: 
+            "image bio transport"
+            "image form level"
+            "countries countries countries";
+        block-size: 332px;
+        padding: 0;
+    }
+
+    .person-card__image {
+        block-size: 190px;
+        inline-size: 190px;
+        border-radius: 20px;
+        padding: 0;
+        margin: 35px 29px 31px 35px;
+    }
+
+    .person-card__transport {
+        flex-direction: column;
+        align-self: flex-end;
+        padding: 0 25px 0 0;
+    }
+
+    .person-card__countries {
+        position: relative;
+        flex-direction: row;
+        padding: 25px 0 27px 36px;
+        border-block-start: 1px solid #edeff6;
+        inline-size: 100%;
+    }
+
+    .person-card__countries::before {
+        position: absolute;
+        content: "";
+        inline-size: 118px;
+        border: 1px solid #fff;
+        inset-inline-start: 71px;
+        inset-block-start: 0;
+        transform: translateY(-50%);
+    }
+
+    .person-card__countries::after {
+        position: absolute;
+        inset-inline-start: 84px;
+        inset-block-start: 0;
+        transform: translateY(-60%);
+        content: "хочет посетить:";
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 16px;
+        text-transform: lowercase;
+        color: #444;
+    }
+
+    .person-card__bio {
+        padding: 33px 100px 46px 7px;
+    }
+
+    .person-card__name {
+        padding: 0;
+    }
+
+    .person-card__form {
+        padding: 0;
+    }
+
+    .person-card__level {
+        margin-block-start: 12px;
+        margin-inline-end: 25px;
+    }
 }

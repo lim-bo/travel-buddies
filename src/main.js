@@ -1,5 +1,5 @@
-import { createCard, tempCards } from "./script/card";
-import { initLevelValues } from "./script/slider";
+import { createCard, tempCards } from "./script/card.js";
+import { initLevelValues } from "./script/slider.js";
 
 const cardsList = document.querySelector(".people");
 const filterTransportButtons = document.querySelectorAll(".people-filter__transport-item");

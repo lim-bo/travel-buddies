@@ -4,13 +4,21 @@ const personCountryItemTemplate =document.getElementById("person-card-country-te
 
 export const createCard = (card) => {
     const cardElement = personCardTemplate.cloneNode(true);
-    cardElement.querySelector(".person-card__name").textContent = card.name;
+
+    const nameElements = cardElement.querySelectorAll(".person-card__name");
+    nameElements.forEach((el) => {
+        el.textContent = card.name;
+    })
     
     const imageElement = cardElement.querySelector(".person-card__image");
     imageElement.src = card.profileImage;
     imageElement.alt = `Фото пользователя ${card.name}`;
 
-    cardElement.querySelector(".person-card__hashtags").textContent = card.hashtags.join(" ");
+    const hashtagsElements = cardElement.querySelectorAll(".person-card__hashtags");
+    const hashtagsString = card.hashtags.join(" ");
+    hashtagsElements.forEach((el) => {
+        el.textContent = hashtagsString;
+    });
 
     const countriesList = cardElement.querySelector(".person-card__countries");
     card.countries.forEach((c) => {
@@ -22,7 +30,11 @@ export const createCard = (card) => {
         countriesList.append(countryElement);
     });
 
-    cardElement.querySelector(".person-card__likes").textContent = `${card.likes.count} ${card.likes.measure || ""}`;
+    const likesCountElements = cardElement.querySelectorAll(".person-card__likes");
+    const likesCount = `${card.likes.count} ${card.likes.measure || ""}`;
+    likesCountElements.forEach((el) => {
+        el.textContent = likesCount;
+    });
 
     Object.entries(card.transport).forEach(([ k ]) => {
         cardElement.querySelector(`.${k}-icon`).classList.add("icon-enabled");
@@ -30,6 +42,8 @@ export const createCard = (card) => {
 
     cardElement.querySelector(".person-card__level").setAttribute("style", `--level: ${card.level}`);
     cardElement.querySelector(".person-card__level-value").textContent = card.level;
+    
+    cardElement.style.setProperty("--mark-color", card.markColor);
     return cardElement;
 };
 
@@ -59,7 +73,8 @@ export const tempCards = [
         level: 99,
         transport: {
             plane: true
-        }
+        },
+        markColor: "#f97676"
     },
     {
         name: "Петя Демин",
@@ -83,7 +98,8 @@ export const tempCards = [
             plane: true,
             bus: true,
             run: true
-        }
+        },
+        markColor: "#f97676"
     },
     {
         name: "Марк Смолов",
@@ -110,7 +126,8 @@ export const tempCards = [
         transport: {
             plane: true,
             bicycle: true
-        }
+        },
+        markColor: "#f97676"
     },
     {
         name: "Лариса Роговая",
@@ -133,6 +150,7 @@ export const tempCards = [
         transport: {
             plane: true,
             bus: true
-        }
+        },
+        markColor: "#81e31e"
     }
 ];

@@ -41,3 +41,13 @@ body {
         grid-row: 2;
     }
 }
+
+@media screen and (width <= 320px) {
+    .content {
+        gap: 24px;
+    }
+
+    .people {
+        gap: 9px;
+    }
+}

@@ -194,7 +194,7 @@
 
 @media screen and (width <= 768px) {
     .people-filter {
-        inline-size: 688px;
+        inline-size: 100%;
         padding: 37px 36px 34px;
     }
 
@@ -247,11 +247,98 @@
         inline-size: 148px;
     }
 
-    .slider {
+    .people-filter__level-slider {
         inline-size: 281px;
     }
 
     .people-filter__show-btn {
         inline-size: 100%;
+    }
+}
+
+@media screen and (width <= 320px) {
+    .people-filter {
+        padding: 26px;
+    }
+
+    .people-filter__title {
+        block-size: 66px;
+        border: none;
+        margin: 0 0 23px;
+        font-size: 22px;
+        line-height: 22px;
+    }
+
+    .people-filter__options {
+        gap: 0;
+        padding: 0;
+        border: none;
+    }
+    
+    .people-filter__options-item {
+        display: block;
+        padding: 12px 0 14px;
+        border-block-start: 1px solid #f3c72b;
+    }
+
+    .people-filter__open-label::before {
+        content: "";
+    }
+
+    .people-filter__option-title {
+        font-size: 16px;
+        line-height: 18px;
+    }
+
+    .people-filter__category {
+        display: none;
+        align-items: start;
+        margin-block: 16px 21px;
+        font-size: 15px;
+    }
+
+    .people-filter__cb-label {
+        padding-inline-start: 27px;
+    }
+
+    .people-filter__cb-label::before {
+        block-size: 18px;
+        inline-size: 18px;
+    }
+
+    .people-filter__transport {
+        display: none;
+        margin-block: 19px 20px;
+    }
+
+    .people-filter__transport-item {
+        block-size: 32px;
+        inline-size: 32px;
+    }
+
+    .people-filter__transport-item svg {
+        block-size: 16px;
+        inline-size: 16px;
+    }
+
+    .people-filter__level {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding-block-start: 16px;
+    }
+
+    .people-filter__level-values {
+        --block-size: 35px;
+        inline-size: 100%;
+    }
+
+    .people-filter__level-slider {
+        inline-size: 100%;
+    }
+
+    .people-filter__show-btn {
+        margin-block-start: 7px;
     }
 }

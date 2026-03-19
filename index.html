@@ -146,7 +146,15 @@
     <template id="person-card-template">
       <li class="person-item">
         <div class="person-card">
-          <img class="person-card__image">
+          <div class="person-card__image-wrap">
+            <img class="person-card__image">
+            <label class="person-card__like-label clickable mobile">
+            <input class="person-card__like-btn visually-hidden" type="checkbox">
+            <svg class="person-card__like-icon" width="20" height="18" viewBox="-1 -1 22 19" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M4.99621 0C7.75662 0 9.99243 2.19375 9.99243 4.9C9.99243 2.19375 12.2282 0 14.9886 0C17.7491 0 19.9849 2.19375 19.9849 4.9C19.9849 8.97875 15.9454 10.4175 10.4821 16.91C10.4219 16.9813 10.3469 17.0386 10.2624 17.0779C10.1778 17.1172 10.0857 17.1376 9.99243 17.1376C9.89918 17.1376 9.80706 17.1172 9.72249 17.0779C9.63793 17.0386 9.56295 16.9813 9.5028 16.91C4.03944 10.4175 0 8.97875 0 4.9C0 2.19375 2.23581 0 4.99621 0Z"/>
+            </svg>
+          </label>
+          </div>
           <div class="person-card__bio">
             <h2 class="person-card__name"></h2>
             <p class="person-card__hashtags"></p>
@@ -186,9 +194,20 @@
               </svg>
             </li>
           </ul>
-          <div class="person-card__level">
-            <span class="person-card__level-value"></span>
-            <span class="person-card__level-label">level</span>
+          <div class="person-card__level-wrap">
+            <span class="person-card__level-mobile-label">левел:</span>
+            <div class="person-card__level">
+              <span class="person-card__level-value"></span>
+              <span class="person-card__level-label">level</span>
+            </div>
+          </div>
+          <div class="person-card__names-likes mobile">
+            <h2 class="person-card__name"></h2>
+            <span class="person-card__likes"></span>
+          </div>
+          <p class="person-card__hashtags mobile"></p>
+          <div class="person-card__invite-btn-wrap mobile">
+            <button class="person-card__invite-btn clickable" type="button">Позвать!</button>
           </div>
         </div>
       </li>

@@ -27,10 +27,11 @@ body {
     inline-size: 100%;
 }
 
-@media screen and (width <= 768px) {
+@media screen and (width <= 1440px) {
     .content {
         grid-template-columns: 1fr;
         grid-template-rows: max-content 1fr;
+        gap: 40px;
     }
 
     .people-filter {
@@ -39,10 +40,11 @@ body {
 
     .people {
         grid-row: 2;
+        gap: 40px;
     }
 }
 
-@media screen and (width <= 320px) {
+@media screen and (width <= 768px) {
     .content {
         gap: 24px;
     }

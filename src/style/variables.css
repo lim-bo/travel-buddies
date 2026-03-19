@@ -14,13 +14,13 @@
     --content-grid-columns-template: 950px 286px;
 }
 
-@media screen and (width <= 768px) {
+@media screen and (width <= 1440px) {
     :root {
         --main-inline-size: 688px;
     }
 }
 
-@media screen and (width <= 320px) {
+@media screen and (width <= 768px) {
     :root {
         --main-inline-size: 270px;
     }

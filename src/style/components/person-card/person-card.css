@@ -215,7 +215,7 @@
     display: contents;
 }
 
-@media screen and (width <= 768px) {
+@media screen and (width <= 1440px) {
     .person-card {
         grid-template-rows: 1fr 88px 76px;
         grid-template-columns: 254px 1fr min-content;
@@ -296,7 +296,7 @@
     }
 }
 
-@media screen and (width <= 320px) {
+@media screen and (width <= 768px) {
     .person-card {
         grid-template-columns: repeat(2, 1fr) min-content;
         grid-template-rows: repeat(5, auto);
